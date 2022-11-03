@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teslon</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.querySelector("#canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 2000
+    canvas.height = 2000
+
+    let skipX = 0;
+    let skipY = 0;
+    let countSkippedX = 0;
+    let countSkippedY = 0;
+
+    for (let i = 1; i <=18; i++) {
+
+      if(countSkippedX == 6){
+        countSkippedX = 0;
+        skipY += 160;
+        skipX = 0;
+      }
+
+      ctx.strokeStyle = "blue";
+      ctx.strokeRect(0 + skipX, 0 + skipY, 200, 150);
+
+      ctx.fillStyle = "blue";
+      ctx.moveTo(100 + skipX, 40 + skipY);
+      ctx.lineTo(40 + skipX, 120  + skipY);
+      ctx.lineTo(150 + skipX, 120 + skipY);
+      ctx.closePath()
+      ctx.stroke();
+
+      skipX += 210;
+      countSkippedX++;
+    }
+  </script>
+</body>
+</html>

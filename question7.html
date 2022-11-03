@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teslon</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.querySelector("#canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 400
+    canvas.height = 400
+
+    let xPos = 100;
+    let yPos = 100;
+
+    const pixelSkip = 20;
+
+    var myImg = new Image();
+    var myImgPos = {
+      x: 250,
+      y: 125,
+      width: 100,
+      height: 100
+    }
+
+    function draw() {
+      myImg.onload = function () {
+        ctx.drawImage(myImg, myImgPos.x, myImgPos.y, myImgPos.width, myImgPos.height);
+      }
+
+      myImg.src = "dolly.jpg";
+    }
+
+    document.addEventListener("keydown", function (event) {
+      switch (event.keyCode) {
+        case 38:
+          console.log("Cima")
+          yPos -= pixelSkip;
+          break;
+        case 37:
+          console.log("esquerda")
+          xPos -= pixelSkip;
+          break;
+        case 39:
+          console.log("Direita")
+          xPos += pixelSkip;
+          break;
+        case 40:
+          console.log("Baixo")
+          yPos += pixelSkip;
+          break;
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      myImgPos.x = xPos;
+      myImgPos.y = yPos;
+      draw();
+
+    });
+
+
+  </script>
+</body>
+
+</html>

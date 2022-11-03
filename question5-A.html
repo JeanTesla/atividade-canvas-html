@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teslon</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.querySelector("#canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 700
+    canvas.height = 700
+
+
+    ctx.strokeStyle = "blue";
+    ctx.strokeRect(0, 0, 200, 150);
+
+    //ctx.beginPath();
+    ctx.fillStyle = "blue";
+    ctx.moveTo(100, 40);
+    ctx.lineTo(40, 120);
+    ctx.lineTo(150, 120);
+    ctx.fill();
+
+    // ------------------------------------/
+
+    ctx.beginPath();
+    ctx.arc(270, 75, 60, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    ctx.fillRect(240, 45, 60, 60);
+
+    // ------------------------------------/
+
+    ctx.beginPath();
+    ctx.moveTo(400, 40);
+    ctx.lineTo(350, 120);
+    ctx.lineTo(450, 120);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(480, 40);
+    ctx.lineTo(420, 120);
+    ctx.lineTo(530, 120);
+    ctx.closePath();
+    ctx.stroke();
+
+    setInterval(() => { window.location.reload() }, 500);
+
+  </script>
+</body>
+</html>

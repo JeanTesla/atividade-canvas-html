@@ -1,0 +1,8 @@
+    1 – Com suas palavras descreva o que é a DOM e qual sua relação com o HTML? 
+        R ---> Resumidamente, o DOM é uma interface para a comunicação do Agente de usuário com os algorítimos dos sites. Isso possibilita a interação e criação de sistemas dinâmicos e multiplataforma.
+    2 – O que é o canvas HTML? 
+        R ---> É um elemento HTML que permite desenhar formas usando geralmente alguma linguagem de script, tipo javascript.
+    3 – Quais as linguagens e tecnologias comumente envolvidas no desenvolvimento de produtos baseados em canvas html? 
+        R ---> Javascript é fortemente usado nessa vertente do desenvolvimento.
+    4 – Explique para que serve o código “document.getElementById()”. 
+        R ---> GetElementById() obtém um elemento que contenha o atributo id com o valor especificado. Ex:  document.getElementById(“X”) obtém o elemento com id=”X” carregado no DOM.

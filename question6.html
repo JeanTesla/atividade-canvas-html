@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teslon</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.querySelector("#canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 400
+    canvas.height = 400
+
+    let xPos = 100;
+    let yPos = 100;
+
+    const pixelSkip = 20;
+
+    ctx.beginPath();
+    ctx.arc(xPos, yPos, 60, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    document.addEventListener("keydown", function (event) {
+      switch (event.keyCode) {
+        case 38:
+          console.log("Cima")
+          yPos -= pixelSkip;
+          break;
+        case 37:
+          console.log("esquerda")
+          xPos -= pixelSkip;
+          break;
+        case 39:
+          console.log("Direita")
+          xPos += pixelSkip;
+          break;
+        case 40:
+          console.log("Baixo")
+          yPos += pixelSkip;
+          break;
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.arc(xPos, yPos, 60, 0, 2 * Math.PI);
+      ctx.stroke();
+    });
+
+
+  </script>
+</body>
+
+</html>
